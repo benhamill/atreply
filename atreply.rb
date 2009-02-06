@@ -16,10 +16,6 @@ class Reply
     self.in_reply_to = status.in_reply_to_status_id
   end
   
-  def atreply
-    Reply.new self.in_reply_to unless self.in_reply_to.nil?
-  end
-  
   def each_reply &block
     reply_chain.each do |reply|
       yield reply
@@ -29,6 +25,10 @@ class Reply
   #########
   protected
   #########
+  
+  def atreply
+    Reply.new self.in_reply_to unless self.in_reply_to.nil?
+  end
   
   def reply_chain
     return [self] unless self.atreply
