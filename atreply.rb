@@ -22,6 +22,10 @@ class Reply
     end
   end
   
+  def to_s
+    self.author + ' - ' + self.time.to_s + "\n" + self.text
+  end
+  
   #########
   protected
   #########
