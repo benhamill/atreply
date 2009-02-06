@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# for testing use id 1181051952
 
 require 'rubygems'
 require 'twitter'
@@ -16,6 +17,25 @@ class Reply
   end
   
   def atreply
-    Reply.new self.in_reply_to
+    Reply.new self.in_reply_to unless self.in_reply_to.nil?
+  end
+  
+  def each_reply &block
+    reply_chain.each do |reply|
+      yield reply
+    end
+  end
+  
+  #########
+  protected
+  #########
+  
+  def reply_chain
+    return [self] unless self.atreply
+    
+    reply_chain = []
+    
+    reply_chain += self.atreply.reply_chain
+    reply_chain << self
   end
 end
