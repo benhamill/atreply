@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # for testing use id 1181051952
 
 require 'rubygems'
