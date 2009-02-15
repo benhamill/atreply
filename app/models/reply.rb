@@ -4,7 +4,7 @@ require 'rubygems'
 require 'twitter'
 
 class Reply
-  attr_accessor :text, :author, :in_reply_to, :time, :atreply
+  attr_accessor :text, :author, :in_reply_to, :time
   
   def initialize status_id
     status = Twitter::Client.new.status :get, status_id

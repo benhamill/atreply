@@ -1,0 +1,7 @@
+<h1>Your Reply Chain</h1>
+<p>Find me in app/views/reply_chain/index.html.erb</p>
+<% @reply_chain.each_reply do |reply| -%>
+  <h2 class="author"><%= reply.author %></h2>
+  <p class="time"><%= reply.time %></p>
+  <p class="status"><%= reply.text %></p>
+<% end -%>
