@@ -1,5 +1,8 @@
 # for testing use id 1181051952
 
+require 'rubygems'
+require 'twitter'
+
 class Reply
   attr_accessor :text, :author, :in_reply_to, :time, :atreply
   
