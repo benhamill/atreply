@@ -13,6 +13,10 @@ class ReplyChain
     @chain.reverse!
   end
   
+  def [] index
+    @chain[index]
+  end
+  
   def each_reply &block
     @chain.each do |reply|
       yield reply
