@@ -33,7 +33,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home'
   
   # reply chain page
-  map.reply_chain ':status_id', :controller => 'reply'
+  map.reply_chain ':status_id', :controller => 'reply_chain'
   
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
