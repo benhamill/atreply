@@ -1,3 +1,6 @@
+<% content_for(:title) do -%>
+<%= h 'Twitter Status ID ' + @reply_chain[-1].id.to_s -%>
+<% end -%>
 <h1>Reply Chain for ID# <%= h @reply_chain[-1].id %></h1>
 <% @reply_chain.each_reply do |reply| -%>
   <h2 class="author"><%= h reply.author %></h2>
