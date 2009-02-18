@@ -1,5 +1,5 @@
 class ReplyChainController < ApplicationController
-  def index
-    @reply_chain = ReplyChain.new(params[:status_id])
+  def display
+    @reply_chain = ReplyChain.new(params[:id])
   end
 end
