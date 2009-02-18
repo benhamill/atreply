@@ -8,4 +8,10 @@
   <p class="status"><%#= h reply.text %></p>
 <%# end -%>
 
-<p>reply_chain: <%= @reply_chain.to_s %></p>
+<p>@reply_chain: <%= @reply_chain.to_s %></p>
+<p>params:</p>
+<ul>
+<% params.each_key do |key| -%>
+  <li><%= h key %>: <%= h params[key] %></li>
+<% end -%>
+</ul>
