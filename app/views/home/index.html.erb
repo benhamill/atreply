@@ -1,8 +1,0 @@
-<% content_for(:title) do -%>
-<%= h 'Home' -%>
-<% end -%>
-<p>Want to read a whole exchange in Twitter? Fill in a Twitter message ID below.</p>
-<% form_for :reply_chain do |f| -%>
-  Status ID: <%= f.text_field :status_id %>
-  <%= submit_tag 'Go!' %>
-<% end -%>
