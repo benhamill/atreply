@@ -30,12 +30,15 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
   
   # Home/search page
-  map.root :controller => 'home'
+  map.root :controller => 'reply_chain'
   
   # reply chain page
-  map.reply_chain ':status_id', :controller => 'reply_chain'
+  # map.reply_chain ':id', :controller => 'reply_chain'
   
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
+  # From Ben Kimball
+  # map.connect ':id', :controller => :reply_chain, :action => :display, :requirements => {:id => /\d/}
 end
