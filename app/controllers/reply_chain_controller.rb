@@ -1,8 +1,5 @@
 class ReplyChainController < ApplicationController
-  def index
-  end
-
   def display
-    @var = 'Yar!'
+    @reply_chain = ReplyChain.new(params[:id])
   end
 end

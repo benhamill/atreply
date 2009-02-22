@@ -1,2 +1,7 @@
-<h1>ReplyChain#display</h1>
-<p>Find me in app/views/reply_chain/display.html.erb</p>
+<% content_for :title do -%>
+<%=  h 'Reply Chain for ID# ' + @reply_chain[-1].id -%>
+<% end -%>
+<% @reply_chain.each_reply do |reply| -%>
+  <p><a href="http://twitter.com/<%= h reply.screen_name %>/"><%= h reply.author %></a> - <%= h reply.time %></p>
+  <p><%= h reply.text %></p>
+<% end -%>
