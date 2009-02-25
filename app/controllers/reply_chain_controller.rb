@@ -1,5 +1,6 @@
 class ReplyChainController < ApplicationController
   def display
-    @reply_chain = ReplyChain.new(params[:id])
+    id = params[:id]
+    @reply_chain = ReplyChain.new(id)
   end
 end

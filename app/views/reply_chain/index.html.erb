@@ -2,7 +2,8 @@
 <%= h 'Home' -%>
 <% end -%>
 <p>Want to read a whole exchange in Twitter? Fill in a Twitter message ID below.</p>
-<% form_for :reply_chain, :html => { :method => :get }, :url => { :action => :display } do |f| -%>
-  Status ID: <%= f.text_field :id %>
+<% form_tag({:action => :display}, :method => 'get') do -%>
+  <%= label_tag :id, 'Status ID' %>
+  <%= text_field_tag :id, params[:id] %>
   <%= submit_tag 'Go!' %>
 <% end -%>
