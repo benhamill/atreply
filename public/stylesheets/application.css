@@ -5,6 +5,15 @@ body {
   padding: 0;
 }
 
+#header {
+  margin-bottom: 50px;
+}
+
+#header h1, h2 {
+  padding: 0;
+  margin: 0;
+}
+
 #header h2 {
   font-size: 1em;
 }
@@ -16,7 +25,8 @@ body {
 
 #container>* {
   width: 70%;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   padding: 0;
 }
 
@@ -35,10 +45,21 @@ body {
   font-size: 0.8em;
 }
 
-a {
-  text-decoration: none;
+a.author {
+  font-weight: bold;
 }
 
-a:hover {
+a {
+  text-decoration: none;
+  color: #930;
+}
+
+body a:hover {
+  text-decoration: underline;
+  color: #930;
+}
+
+a:visited {
+  color: #310;
   text-decoration: underline;
 }
