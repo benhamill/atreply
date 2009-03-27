@@ -31,6 +31,7 @@ task :setup_production_twitter_user_config do
   config = { :username=>username, :password=>password }
   
   run "mkdir -p #{shared_path}/config"
+  run "touch #{shared_path}/config/twitter_user.yaml"
   put config.to_yaml, "#{shared_path}/config/twitter_user.yaml"
 end
 after 'deploy:setup', :setup_production_twitter_user_config
