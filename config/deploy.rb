@@ -24,14 +24,14 @@ end
 
 desc 'Creates the production twitter_user.yml up.'
 task :setup_production_twitter_user_config do
-  username = Capistrano::CLI.password_prompt 'Twitter Username:'
+  username = Capistrano::CLI.prompt 'Twitter Username:'
   password = Capistrano::CLI.password_prompt 'Twitter Password:'
   
   require 'yaml'
   config = { :username=>username, :password=>password }
   
   run "mkdir -p #{shared_path}/config"
-  put spec.to_yaml, "#{shared_path}/config/twitter_user.yaml"
+  put config.to_yaml, "#{shared_path}/config/twitter_user.yaml"
 end
 after 'deploy:setup', :setup_production_twitter_user_config
 
