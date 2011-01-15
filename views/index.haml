@@ -1,5 +1,5 @@
 %p Want to read a whole exchange in Twitter? Fill in a Twitter message ID below.
-%form{:method => 'get'}
+%form{:action => '/reply_chain', :method => 'get'}
   %label{:for => 'id'} Stats ID
   %input#id{:type => 'text', :name => 'id'}
   %input{:type => 'submit', :value => 'Go!'}
