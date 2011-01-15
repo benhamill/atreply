@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title
+      @reply ::
+      = @page_title || 'Some Untitled Page'
+    %link{:rel => 'shortcut icon', :type => 'image/png', :href => '/favicon.png'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/atreply.css', :media => 'screen, projection'}
+
+  %body
+    #container
+      #header
+        %h1
+          = "@#{link_to '/', 'Reply'}"
+        %h2
+          A conversation display for
+          = "#{link_to 'http://twitter.com/', 'Twitter'}."
+      #body
+        = yield
+    #footer
+      %p
+        = "@#{link_to '/', 'reply'} by @#{link_to 'http://twitter.com/benhamill/', 'benhamill'}."
