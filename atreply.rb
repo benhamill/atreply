@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'haml'
+require 'reply_chain'
 
 set :haml, :format => :html5
 
@@ -9,7 +10,9 @@ get '/' do
 end
 
 get '/reply_chain/?' do
-  # do the reply chain dance for param[:id] and display it.
+  @page_title = "Reply chain for id #{params[:id]}"
+  @reply_chain = ReplyChain.new(params[:id])
+  haml :reply_chain
 end
 
 not_found do
