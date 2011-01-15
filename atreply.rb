@@ -21,7 +21,14 @@ not_found do
 end
 
 helpers do
-  def link_to url, text
-    %Q{<a href="#{url}">#{text}</a>}
+  def link_to url, text, options={}
+    valid_options = [:class, :id]
+    attributes = %Q{href="#{url}"}
+
+    valid_options.each do |option|
+      attributes = %Q{#{attributes} #{option.to_s}="#{options[option]}"}
+    end
+
+    "<a #{attributes}>#{text}</a>"
   end
 end
