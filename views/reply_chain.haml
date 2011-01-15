@@ -1,0 +1,6 @@
+= @reply_chain.each_reply do |reply|
+  %p
+    = link_to "http://twitter.com/#{reply.screen_name}", reply.author
+    = reply.text
+  %p.time
+    = reply.time
