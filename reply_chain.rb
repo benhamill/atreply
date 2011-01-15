@@ -32,3 +32,18 @@ class ReplyChain
     @client ||= Grackle::Client.new(YAML::load_file(CONFIG_FILE))
   end
 end
+
+class Reply
+  attr_accessor :text, :author, :in_reply_to, :time, :id, :screen_name
+
+  def initialize client, status_id
+    status = client.statuses.show.json? :id => status_id
+
+    self.id = status_id
+    self.text = status.text
+    self.author = status.user.name or status.user.screen_name
+    self.screen_name = status.user.screen_name
+    self.time = status.created_at
+    self.in_reply_to = status.in_reply_to_status_id
+  end
+end
