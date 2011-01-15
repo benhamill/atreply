@@ -20,6 +20,11 @@ not_found do
   haml :four_oh_four
 end
 
+error do
+  @page_title = 'Error'
+  haml :error
+end
+
 helpers do
   def link_to url, text, options={}
     valid_options = [:class, :id]
