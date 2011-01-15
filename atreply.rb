@@ -8,7 +8,7 @@ get '/' do
   haml :index
 end
 
-get '/:id' do
+get '/reply_chain/?' do
   # do the reply chain dance for param[:id] and display it.
 end
 
