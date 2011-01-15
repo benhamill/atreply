@@ -13,7 +13,8 @@ get '/:id' do
 end
 
 not_found do
-  # render the 404 page.
+  @page_title = '404 - Page Not Found'
+  haml :four_oh_four
 end
 
 helpers do
