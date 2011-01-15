@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'haml'
-require 'reply_chain'
+require './reply_chain'
 
 set :haml, :format => :html5
 
