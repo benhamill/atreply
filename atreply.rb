@@ -4,6 +4,7 @@ require 'haml'
 set :haml, :format => :html5
 
 get '/' do
+  @page_title = 'Home'
   haml :index
 end
 
