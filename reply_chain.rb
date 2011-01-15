@@ -24,6 +24,7 @@ class ReplyChain
     @chain.each do |reply|
       yield reply
     end
+    nil
   end
 
   protected
