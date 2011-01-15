@@ -4,7 +4,7 @@ require 'haml'
 set :haml, :format => :html5
 
 get '/' do
-  # render index.
+  haml :index
 end
 
 get '/:id' do
@@ -16,4 +16,7 @@ not_found do
 end
 
 helpers do
+  def link_to url, text
+    %Q{<a href="#{url}">#{text}</a>}
+  end
 end
