@@ -7,21 +7,21 @@ class ReplyChain
   CONFIG_FILE = "secrets.yaml"
 
   def initialize status_id
-    chain = [Reply.new(client, status_id.to_s)]
+    @chain = [Reply.new(client, status_id.to_s)]
 
-    while chain[-1].in_reply_to do
-      chain << Reply.new(client, chain[-1].in_reply_to)
+    while @chain[-1].in_reply_to do
+      @chain << Reply.new(client, @chain[-1].in_reply_to)
     end
 
-    chain.reverse!
+    @chain.reverse!
   end
 
   def [] index
-    chain[index]
+    @chain[index]
   end
 
   def each_reply &block
-    chain.each do |reply|
+    @chain.each do |reply|
       yield reply
     end
   end
