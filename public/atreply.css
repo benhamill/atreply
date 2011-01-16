@@ -18,6 +18,10 @@ body {
   margin: 0;
 }
 
+#header h1 {
+  font-size: 3em;
+}
+
 #header h2 {
   font-size: 1em;
 }
