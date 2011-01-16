@@ -11,8 +11,16 @@ end
 
 get '/reply_chain/?' do
   @page_title = "Reply chain for id #{params[:id]}"
-  @reply_chain = ReplyChain.new(params[:id])
-  haml :reply_chain
+  begin
+    @reply_chain = ReplyChain.new(params[:id])
+    haml :reply_chain
+  rescue Grackle::TwitterError => e
+    if e.message.split(' => ').last.match(/^400/)
+      haml :rate_limit
+    else
+      raise e
+    end
+  end
 end
 
 not_found do
