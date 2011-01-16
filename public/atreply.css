@@ -45,8 +45,21 @@ body {
   font-size: 0.8em;
 }
 
+.tweet {
+  margin: 1em 0;
+}
+
+.tweet p {
+  padding: 0;
+  margin: 0;
+}
+
 a.author {
   font-weight: bold;
+}
+
+p.meta {
+  font-size: 80%;
 }
 
 a {

@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    activesupport (3.0.3)
     grackle (0.1.10)
       json
       mime-types
@@ -8,6 +9,8 @@ GEM
     haml (3.0.25)
     json (1.4.6)
     mime-types (1.16)
+    natural_time (0.0.3)
+      activesupport
     oauth (0.4.4)
     rack (1.2.1)
     sinatra (1.1.2)
@@ -21,4 +24,5 @@ PLATFORMS
 DEPENDENCIES
   grackle (~> 0.1)
   haml (~> 3.0)
+  natural_time (~> 0.0)
   sinatra (~> 1.1)
