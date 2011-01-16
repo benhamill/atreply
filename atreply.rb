@@ -10,9 +10,11 @@ get '/' do
 end
 
 get '/reply_chain/?' do
-  @page_title = "Reply chain for id #{params[:id]}"
+  id = params[:id].split('/').last
+  @page_title = "Reply chain for id #{id}"
+
   begin
-    @reply_chain = ReplyChain.new(params[:id])
+    @reply_chain = ReplyChain.new(id)
     haml :reply_chain
   rescue Grackle::TwitterError => e
     if e.message.split(' => ').last.match(/^400/)
@@ -46,7 +48,22 @@ helpers do
   end
 
   def tweet_linkify text
-    urls = text.gsub(/(http:\/\/[a-zA-Z0-9_\-\/\.\?\&]+)/) { link_to($1, $1) }
-    usernames = urls.gsub(/\@([a-zA-Z0-9_\-]+)/) { %Q{@#{link_to("http://twitter.com/#{$1}", $1)}} }
+    urls = text.gsub(/(https?:\/\/[a-zA-Z0-9_\-\/\.\?&=]+)/) do
+      match = $1
+
+      if match.end_with?('.')
+        match.chop!
+        period = '.'
+      else
+        period = nil
+      end
+
+      "#{link_to(match, match)}#{period}"
+    end
+
+    usernames = urls.gsub(/\@([a-zA-Z0-9_\-]+)/) do
+      url = "http://twitter.com/#{$1}"
+      "@#{link_to(url, $1)}"
+    end
   end
 end

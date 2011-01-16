@@ -1,17 +1,25 @@
 body {
-  background-color: #ed7;
+  background: #210 url('/at_background.png') center center;
   color: #310;
   margin: 0;
   padding: 0;
 }
 
 #header {
-  margin-bottom: 50px;
+  margin: 0 auto;
+  border-bottom: 3px solid #532;
+  background-color: #ed7;
+  width: 900px;
+  padding: 50px;
 }
 
 #header h1, h2 {
   padding: 0;
   margin: 0;
+}
+
+#header h1 {
+  font-size: 3em;
 }
 
 #header h2 {
@@ -20,28 +28,22 @@ body {
 
 #container {
   background-color: #eeb;
-  padding: 30px 0;
-}
-
-#container>* {
-  width: 70%;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0;
+  padding: 30px 50px;
+  width: 900px;
+  margin: 0 auto;
 }
 
 #footer {
-  border-top: 3px solid #532;
-}
-
-#footer>* {
-  width: 70%;
+  width: 900px;
   margin: 0 auto;
-  padding: 0;
+  padding: 1em 50px;
+  border-top: 3px solid #532;
+  background-color: #ed7;
 }
 
 #footer p {
-  padding: 1em 0;
+  text-align: right;
+  padding: 0;
   font-size: 0.8em;
 }
 
@@ -56,6 +58,7 @@ body {
 
 a.author {
   font-weight: bold;
+  color: #310;
 }
 
 p.meta {
@@ -70,9 +73,4 @@ a {
 body a:hover {
   text-decoration: underline;
   color: #930;
-}
-
-a:visited {
-  color: #310;
-  text-decoration: underline;
 }

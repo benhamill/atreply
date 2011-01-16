@@ -8,13 +8,13 @@
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/atreply.css', :media => 'screen, projection'}
 
   %body
+    #header
+      %h1
+        = "@#{link_to '/', 'Reply'}"
+      %h2
+        A conversation display for
+        = "#{link_to 'http://twitter.com/', 'Twitter'}."
     #container
-      #header
-        %h1
-          = "@#{link_to '/', 'Reply'}"
-        %h2
-          A conversation display for
-          = "#{link_to 'http://twitter.com/', 'Twitter'}."
       #body
         = yield
     #footer
