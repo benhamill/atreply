@@ -10,9 +10,11 @@ get '/' do
 end
 
 get '/reply_chain/?' do
-  @page_title = "Reply chain for id #{params[:id]}"
+  id = params[:id].split('/').last
+  @page_title = "Reply chain for id #{id}"
+
   begin
-    @reply_chain = ReplyChain.new(params[:id])
+    @reply_chain = ReplyChain.new(id)
     haml :reply_chain
   rescue Grackle::TwitterError => e
     if e.message.split(' => ').last.match(/^400/)
