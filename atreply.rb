@@ -31,9 +31,14 @@ helpers do
     attributes = %Q{href="#{url}"}
 
     valid_options.each do |option|
-      attributes = %Q{#{attributes} #{option.to_s}="#{options[option]}"}
+      attributes = %Q{#{attributes} #{option.to_s}="#{options[option]}"} if options[option]
     end
 
     "<a #{attributes}>#{text}</a>"
+  end
+
+  def tweet_linkify text
+    urls = text.gsub(/(http:\/\/[a-zA-Z0-9_\-\/\.\?\&]+)/) { link_to($1, $1) }
+    usernames = urls.gsub(/\@([a-zA-Z0-9_\-]+)/) { %Q{@#{link_to("http://twitter.com/#{$1}", $1)}} }
   end
 end
