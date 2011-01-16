@@ -68,4 +68,8 @@ class Reply
     }
     @utc_time = Time.utc(time_hash[:year], time_hash[:month], time_hash[:date], time_hash[:hour], time_hash[:minute], time_hash[:second])
   end
+
+  def original_tweet
+    "http://twitter.com/#{screen_name}/status/#{id}"
+  end
 end

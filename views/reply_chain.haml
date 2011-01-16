@@ -3,5 +3,5 @@
     %p
       = link_to "http://twitter.com/#{reply.screen_name}", reply.author, :class => 'author'
       = tweet_linkify(reply.text)
-    %p.time
-      = reply.friendly_time
+    %p.meta
+      = link_to reply.original_tweet, reply.friendly_time
