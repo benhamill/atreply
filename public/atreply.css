@@ -1,12 +1,16 @@
 body {
-  background-color: #ed7;
+  background: #210 url('/at_background.png') center center;
   color: #310;
   margin: 0;
   padding: 0;
 }
 
 #header {
-  margin-bottom: 50px;
+  margin: 0 auto;
+  border-bottom: 3px solid #532;
+  background-color: #ed7;
+  width: 900px;
+  padding: 50px;
 }
 
 #header h1, h2 {
@@ -20,24 +24,17 @@ body {
 
 #container {
   background-color: #eeb;
-  padding: 30px 0;
-}
-
-#container>* {
-  width: 70%;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0;
+  padding: 30px 50px;
+  width: 900px;
+  margin: 0 auto;
 }
 
 #footer {
-  border-top: 3px solid #532;
-}
-
-#footer>* {
-  width: 70%;
+  width: 900px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 50px;
+  border-top: 3px solid #532;
+  background-color: #ed7;
 }
 
 #footer p {
