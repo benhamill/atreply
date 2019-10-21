@@ -9,7 +9,7 @@ GEM
     json (1.4.6)
     mime-types (1.16)
     oauth (0.4.4)
-    rack (1.2.1)
+    rack (1.6.11)
     sinatra (1.1.2)
       rack (~> 1.1)
       tilt (~> 1.2)
