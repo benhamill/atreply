@@ -6,7 +6,7 @@ GEM
       mime-types
       oauth
     haml (3.0.25)
-    json (1.4.6)
+    json (2.3.1)
     mime-types (1.16)
     oauth (0.4.4)
     rack (1.2.1)
